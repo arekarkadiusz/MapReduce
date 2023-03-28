@@ -26,7 +26,7 @@ class MRFlights(MRJob):
         arrival_delay = float(arrival_delay)
         month = int(month)
 
-        yield month, (departure_delay, arrival_delay)
+        yield f'{month:02d}', (departure_delay, arrival_delay)
 
     def reducer(self, key, values):
         total_departure_delay = 0
